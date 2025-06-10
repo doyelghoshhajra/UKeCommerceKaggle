@@ -66,7 +66,18 @@ df.isnull().any(axis=1).sum()
 
 #Statistical models assume MCAR or MAR for unbiased estimation.
 
+#Visualize Missing Data (Optional but Very Helpful)
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+sns.heatmap(df.isnull(), cbar=False, yticklabels=False, cmap='viridis')
+plt.title("Missing Data Heatmap")
+plt.show()
+
+df.isnull().sum().plot(kind='bar')
+plt.title("Missing Values per Column")
+plt.ylabel("Count")
+plt.show()
 
 # Fill or drop missing values
 df.fillna(method='ffill', inplace=True)
