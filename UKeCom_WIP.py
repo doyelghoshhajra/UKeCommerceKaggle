@@ -79,7 +79,7 @@ plt.title("Missing Values per Column")
 plt.ylabel("Count")
 plt.show()
 
-# Fill or drop missing values
+# Fill or drop missing values depending on objective
 df.fillna(method='ffill', inplace=True)
 # or
 df.dropna()
