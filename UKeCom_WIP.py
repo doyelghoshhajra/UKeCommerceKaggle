@@ -93,6 +93,8 @@ missing_rows = df[df.isnull().any(axis=1)]
 # Print first 10 such rows
 print(missing_rows.head(10))
 
+#outlier detection
+
 
 
 
