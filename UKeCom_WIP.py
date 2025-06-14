@@ -94,6 +94,13 @@ missing_rows = df[df.isnull().any(axis=1)]
 print(missing_rows.head(10))
 
 #outlier detection and treatment
+import pandas as pd
+from scipy.stats import zscore
+
+df = pd.DataFrame(df, columns=['Value'])
+df['Z-score'] = zscore(df['Value'])
+outliers = df[df['Z-score'].abs() > 3]
+print(outliers)
 
 
 
