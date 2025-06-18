@@ -94,6 +94,10 @@ missing_rows = df[df.isnull().any(axis=1)]
 print(missing_rows.head(10))
 
 #outlier detection: Z-score > 3 or < -3
+sns.boxplot(x=df['Quantity'])
+sns.boxplot(x=df['UnitPrice'])
+sns.scatterplot(x='Quantity', y='UnitPrice', data=df)
+
 from scipy.stats import zscore
 
 # Select the columns to check for outliers
