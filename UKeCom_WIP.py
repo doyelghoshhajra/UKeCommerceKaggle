@@ -95,7 +95,6 @@ print(missing_rows.head(10))
 
 #outlier detection and treatment
 from scipy.stats import zscore
-import pandas as pd
 
 # Select the columns to check for outliers
 cols_to_check = ['Quantity', 'UnitPrice']
