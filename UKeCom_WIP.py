@@ -93,7 +93,7 @@ missing_rows = df[df.isnull().any(axis=1)]
 # Print first 10 such rows
 print(missing_rows.head(10))
 
-#outlier detection and treatment
+#outlier detection: Z-score > 3 or < -3
 from scipy.stats import zscore
 
 # Select the columns to check for outliers
@@ -105,7 +105,6 @@ z_scores = df[cols_to_check].apply(zscore)
 # Add Z-score columns (optional, for inspection)
 df[[col + '_Z' for col in cols_to_check]] = z_scores
 
-# Detect outliers: any Z-score > 3 or < -3
 outliers = df[(z_scores.abs() > 3).any(axis=1)]
 
 print(outliers)
